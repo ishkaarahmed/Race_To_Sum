@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background-image: url('../images/imagei.jpg');
+}
+
+
+.dashboard-title {
+    font-size: 6em;
+    color: #d5d21a; 
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-weight: bolder;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+    margin-bottom: 50px;
+}
+
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.dashboard-button {
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 2.5em;
+    padding: 20px 40px;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    text-decoration: none;
+}
+
+.dashboard-button.start-game {
+    background: linear-gradient(45deg, #ff5f6d, #ffc3a0); /* Gradient for Start Game */
+}
+
+.dashboard-button.start-game:hover {
+    background: linear-gradient(45deg, #cc3e46, #ff9b7a);
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.dashboard-button.leaderboard {
+    background: linear-gradient(45deg, #0073e6, #5fbae9); /* Gradient for Leaderboard */
+}
+
+.dashboard-button.leaderboard:hover {
+    background: linear-gradient(45deg, #005bb5, #3c9bde);
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.dashboard-button.settings {
+    background: linear-gradient(45deg, #f5deb3, #e3c995); /* Gradient for Settings */
+}
+
+.dashboard-button.settings:hover {
+    background: linear-gradient(45deg, #e3c995, #c5b29a);
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Hover Effects */
+.dashboard-button:hover {
+    transform: translateY(-5px); /* Slight lift */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
+}
+
+/* Logout Icon */
+.logout-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.logout-icon {
+    width: 50px;
+    height: 50px;
+    filter: brightness(0) invert(1); /* Makes icon white */
+    transition: transform 0.3s ease;
+}
+
+.logout-button:hover .logout-icon {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Responsive design: smaller buttons for mobile */
+@media (max-width: 768px) {
+    .dashboard-button {
+        font-size: 2em;
+        padding: 15px 30px;
+    }
+}
