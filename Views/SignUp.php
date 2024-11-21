@@ -10,7 +10,7 @@
     <h1 class="page-title">Create Your Account</h1>
     
     <div class="signup-container">
-        <form id="signup-form" onsubmit="return validateForm()">
+        <form id="signup-form" action="../Controllers/register.php" method="POST" onsubmit="return validateForm()">
             <label for="email">Email</label>
             <input type="email" id="email" name="email" required>
             
@@ -21,14 +21,13 @@
             <input type="password" id="password" name="password" required>
             
             <label for="confirm-password">Confirm Password</label>
-            <input type="password" id="confirm-password" name="confirm-password" required>
+            <input type="password" id="confirm-password" name="confirmPassword" required>
 
             <button type="submit" class="signup-button">Sign Up</button>
-            <p class="login-link">Already have an account? <a href="../Views/Login.html">Log in</a></p>
+            <p class="login-link">Already have an account? <a href="../Views/Login.php">Log in</a></p>
         </form>
-        
     </div>
 
-    <script src="SignUp.js"></script>
+    <script src="../Assets/js/SignUp.js"></script>
 </body>
 </html>
