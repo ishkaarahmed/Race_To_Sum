@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: url('../images/imagei.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #ffffff;
+}
+
+.page-title {
+    font-size: 4.5em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #d5d21a;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    margin-bottom: 75px;
+}
+
+.settings-container {
+    width: 90%;
+    max-width: 450px;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    position: relative;
+}
+
+/* Music Toggle Section */
+.toggle-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.toggle-label {
+    font-weight: bold;
+    font-family: 'Verdana', Geneva, Tahoma, sans-serif;
+    font-size: 1.4em;
+    color: #ffffff;
+}
+
+.toggle-switch {
+    position: relative;
+    width: 60px;
+    height: 34px;
+}
+
+.toggle-switch .toggle-input {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer; /* Ensures the input is clickable */
+    position: absolute; /* Places it correctly */
+    z-index: 2; /* Brings it to the front */
+}
+
+
+.toggle-switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.toggle-switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+.toggle-switch .toggle-input:checked + .slider {
+    background-color: #4CAF50;
+}
+
+.toggle-switch .toggle-input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Back Button Styling */
+.back-button {
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.back-button .back-icon {
+    width: 50px;
+    height: 50px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
+    display: block;
+    object-fit: contain;
+}
+
+.back-button .back-icon:hover {
+    transform: scale(1.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 3.5em;
+    }
+
+    .settings-container {
+        padding: 20px;
+    }
+
+    .toggle-label {
+        font-size: 1.2em;
+    }
+
+    .back-button .back-icon {
+        width: 40px;
+        height: 40px;
+    }
+}

@@ -114,3 +114,184 @@ body {
         padding: 15px 30px;
     }
 }
+.user-info {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+.user-info .username {
+    font-weight: bold;
+    color: #FFD700; /* Gold color */
+}
+
+.user-info .logout-link {
+    margin-left: 15px;
+    color: #ff6961;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.user-info .logout-link:hover {
+    text-decoration: underline;
+}
+
+/* Popup Container */
+.popup {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Darker semi-transparent overlay */
+    backdrop-filter: blur(20px) saturate(120%) brightness(0.8); /* Glassy effect */
+    z-index: 1000; /* Ensure it appears above all elements */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInBackdrop 0.4s ease; /* Smooth backdrop fade-in animation */
+}
+
+@keyframes fadeInBackdrop {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Popup Content */
+.popup-content {
+    background: rgba(20, 20, 20, 0.95); /* Very dark glass effect */
+    backdrop-filter: blur(25px); /* Enhance glassy look */
+    padding: 40px 50px;
+    border-radius: 15px; /* Smooth rounded corners */
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6); /* Stronger shadow for a floating effect */
+    position: relative;
+    animation: slideInPopup 0.5s ease; /* Smooth slide-in animation */
+}
+
+@keyframes slideInPopup {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Quit Button for Popup */
+.popup-quit {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it appears above popup content */
+}
+
+.popup-quit .quit-icon {
+    width: 40px;
+    height: 40px;
+    filter: brightness(0) invert(0.8); /* Semi-light color */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.popup-quit:hover .quit-icon {
+    transform: scale(1.2); /* Slight zoom effect */
+    filter: brightness(0) invert(1); /* Bright white on hover */
+}
+
+
+/* Popup Heading */
+.popup-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 25px;
+    color: #ffd700;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Form Label */
+.popup-content form label {
+    display: block;
+    margin: 15px 0 5px;
+    font-size: 1.2em;
+    color: #ddd;
+    text-align: left;
+}
+
+/* Input Fields */
+.popup-content form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #555;
+    border-radius: 8px;
+    font-size: 1.1em;
+    background: rgba(50, 50, 50, 0.9);
+    color: #fff;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.popup-content form input:focus {
+    border-color: #ffd700;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+    outline: none;
+}
+
+/* Update Button */
+.update-button {
+    background: linear-gradient(45deg, #ff7f50, #ff6347);
+    color: #fff;
+    font-size: 1.3em;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.update-button:hover {
+    background: linear-gradient(45deg, #ff4500, #ff6347);
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+.success-message, .error-message {
+    margin: 10px auto;
+    padding: 10px;
+    max-width: 400px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+}
+
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
