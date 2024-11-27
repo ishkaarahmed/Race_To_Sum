@@ -28,7 +28,7 @@ if (!isset($_SESSION['user_id'])) {
       <button id="submit-answer">Submit Answer</button>
     </div>
     <button id="next-level" style="display: none;">Next Level</button>
-    <button id="quit-game" onclick="quitGame()">
+    <button id="quit-game">
       <img src="../Assets/images/quit.png" alt="Quit" class="quit-icon">
     </button>
   </div>

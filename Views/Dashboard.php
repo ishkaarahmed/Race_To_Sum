@@ -6,7 +6,6 @@ if (!isset($_SESSION['user_id'])) {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,10 +15,14 @@ if (!isset($_SESSION['user_id'])) {
     <link rel="stylesheet" href="../Assets/css/Dashboard.css">
 </head>
 <body style="background: url('../Assets/images/imagei.jpg') no-repeat center center fixed; background-size: cover;">
-
     <!-- Display Logged-In Username -->
     <div class="user-info">
-        <p>Let's Race to Sum, <span class="username"><?php echo htmlspecialchars($_SESSION['username']); ?></span> !</p>
+        <p>
+            Let's Race to Sum, 
+            <span class="username" onclick="toggleProfilePopup()">
+                <?php echo htmlspecialchars($_SESSION['username']); ?>
+            </span>!
+        </p>
     </div>
 
     <!-- Dashboard Content -->
@@ -30,24 +33,39 @@ if (!isset($_SESSION['user_id'])) {
         
         <a href="../Views/Leaderboard.php" class="dashboard-button leaderboard">View Leaderboard</a>
 
-        <a href="../Views/settings.php" class="dashboard-button settings">Settings</a>
+        <a href="../Views/Settings.php" class="dashboard-button settings">Settings</a>
     </div>
 
-<!-- Logout Button -->
-<a href="javascript:void(0);" class="logout-button" onclick="confirmLogout()">
-    <img src="../Assets/images/logout.png" alt="Log Out" class="logout-icon">
-</a>
+    <!-- Logout Button -->
+    <a href="javascript:void(0);" class="logout-button" onclick="confirmLogout()">
+        <img src="../Assets/images/logout.png" alt="Log Out" class="logout-icon">
+    </a>
 
-<!-- JavaScript for Logout Confirmation -->
-<script>
-    function confirmLogout() {
-        const userConfirmed = confirm("Are you sure you want to logout?");
-        if (userConfirmed) {
-            // Redirect to logout.php to destroy session and log out
-            window.location.href = "../Controllers/logout.php";
-        }
-    }
-</script>
+    <div id="profile-popup" class="popup" style="display: none;">
+    <div class="popup-content">
+        <!-- Quit Button -->
+        <button class="popup-quit" onclick="toggleProfilePopup()">
+            <img src="../Assets/images/quit.png" alt="Close" class="quit-icon">
+        </button>
+        <h2>Update Profile</h2>
+        <div id="message"></div> <!-- Placeholder for success/error messages -->
+        <form id="profile-form">
+            <label for="old-password">Current Password</label>
+            <input type="password" id="old-password" name="old_password" required placeholder="Enter current password">
 
+            <label for="username">New Username</label>
+            <input type="text" id="username" name="username" required value="<?php echo htmlspecialchars($_SESSION['username']); ?>">
+
+            <label for="password">New Password</label>
+            <input type="password" id="password" name="password" required placeholder="Enter new password">
+
+            <label for="confirm-password">Confirm New Password</label>
+            <input type="password" id="confirm-password" name="confirm_password" required placeholder="Confirm new password">
+
+            <button type="button" class="update-button" id="update-profile">Update Profile</button>
+        </form>
+    </div>
+</div>
+<script src="../Assets/js/Dashboard.js"></script>
 </body>
 </html>
