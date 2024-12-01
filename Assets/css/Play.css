@@ -134,18 +134,28 @@ h1 {
 }
 
 #balloon-animation {
-  font-size: 2.5em;
+  display: none; /* Initially hidden */
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  animation: balloon-pop 1s ease-in-out forwards;
+  font-size: 2.5rem;
+  color: red;
+  animation: float-up 1s ease-out;
+  z-index: 1000;
 }
 
-@keyframes balloon-pop {
-  0% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-  100% { opacity: 0; transform: translate(-50%, -150%) scale(1.5); }
+@keyframes float-up {
+  0% {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+  }
+  100% {
+      opacity: 0;
+      transform: translate(-50%, -100%);
+  }
 }
+
 
 
 #quit-game {

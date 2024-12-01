@@ -1,69 +1,60 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const gameMusic = document.getElementById("game-music");
-    const gameBG = document.getElementById("game-bg");
-    const wrongAnswer = document.getElementById("wrong-answer");
-    const gameOver = document.getElementById("game-over");
+    const dashboardMusic = document.getElementById("dashboard-music");
+    const gameMusic = document.getElementById("play-music");
+    const musicToggle = document.getElementById("music-toggle");
 
-    // Play login background music
-    function playGameMusic() {
-        gameMusic.play();
+    // Retrieve music state from localStorage
+    const isMusicEnabled = localStorage.getItem("musicEnabled") === "true";
+
+    // Play or pause music based on state
+    function toggleMusic(audioElement, shouldPlay) {
+        if (audioElement) {
+            if (shouldPlay) {
+                audioElement.play();
+                audioElement.loop = true; // Ensure music loops
+            } else {
+                audioElement.pause();
+            }
+        }
     }
 
-    // Play game background music
-    function playGameBG() {
-        gameBG.play();
+    // Initialize music state
+    function initializeMusic() {
+        if (dashboardMusic) {
+            toggleMusic(dashboardMusic, isMusicEnabled);
+        }
     }
 
-    // Play wrong answer sound
-    function playWrongAnswer() {
-        wrongAnswer.play();
+    // Handle settings toggle
+    if (musicToggle) {
+        // Set toggle to reflect current state
+        musicToggle.checked = isMusicEnabled;
+
+        // Add event listener for toggle
+        musicToggle.addEventListener("change", () => {
+            const enabled = musicToggle.checked;
+            localStorage.setItem("musicEnabled", enabled);
+
+            if (dashboardMusic) toggleMusic(dashboardMusic, enabled && !gameMusic?.playing);
+            if (gameMusic) toggleMusic(gameMusic, enabled && gameMusic?.playing);
+        });
     }
 
-    // Play game over sound
-    function playGameOver() {
-        gameOver.play();
+    // Start game music when "Start Game" is clicked
+    const startGameButton = document.querySelector(".start-game");
+    if (startGameButton) {
+        startGameButton.addEventListener("click", () => {
+            toggleMusic(dashboardMusic, false); // Stop dashboard music
+            if (gameMusic && isMusicEnabled) toggleMusic(gameMusic, true); // Play game music
+        });
     }
 
-    // Stop all sounds
-    function stopAllSounds() {
-        gameMusic.pause();
-        gameMusic.currentTime = 0;
-
-        gameBG.pause();
-        gameBG.currentTime = 0;
-
-        wrongAnswer.pause();
-        wrongAnswer.currentTime = 0;
-
-        gameOver.pause();
-        gameOver.currentTime = 0;
-    }
-
-    // Bind sounds to specific game events
-    // Example: Call `playGameMusic()` after login
-    document.addEventListener("loginSuccess", () => {
-        playGameMusic();
+    // Stop music when leaving the page
+    window.addEventListener("beforeunload", () => {
+        if (dashboardMusic) dashboardMusic.pause();
+        if (gameMusic) gameMusic.pause();
     });
 
-    // Example: Start background music when gameplay begins
-    document.addEventListener("gameStart", () => {
-        stopAllSounds();
-        playGameBG();
-    });
-
-    // Example: Trigger wrong answer sound
-    document.addEventListener("wrongAnswer", () => {
-        playWrongAnswer();
-    });
-
-    // Example: Trigger game over sound
-    document.addEventListener("gameOver", () => {
-        stopAllSounds();
-        playGameOver();
-    });
-
-    // Utility to stop all sounds when needed
-    document.addEventListener("stopSounds", () => {
-        stopAllSounds();
-    });
+    // Initialize on load
+    initializeMusic();
 });

@@ -113,6 +113,19 @@ function loadNextQuestion() {
   startTimer();
   fetchQuestion();
 }
+function showBalloonAnimation() {
+  const animation = document.getElementById("balloon-animation");
+  if (animation) {
+      animation.style.display = "block"; // Show the animation
+      animation.style.animation = "float-up 1s ease-out"; // Apply animation
+      setTimeout(() => {
+          animation.style.display = "none"; // Hide after 1 second
+          animation.style.animation = ""; // Reset animation for next trigger
+      }, 1000);
+  }
+}
+
+
 
 function endGame() {
   alert("Time's up! Game over.");
