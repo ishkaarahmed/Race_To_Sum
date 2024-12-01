@@ -37,7 +37,6 @@
             </tbody>
         </table>
     </div>
-
     <script>
         // Fetch leaderboard data
         fetch("../Controllers/save_score.php?fetch_leaderboard=true")

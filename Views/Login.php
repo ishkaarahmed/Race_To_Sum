@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +25,7 @@
         <!-- Login Form -->
         <form id="login-form" action="../Controllers/login.php" method="POST">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" required oninput="clearErrorMessage()">
+            <input type="email" id="email" name="email" required oninput="clearErrorMessage()" >
             
             <label for="password">Password</label>
             <input type="password" id="password" name="password" required oninput="clearErrorMessage()">

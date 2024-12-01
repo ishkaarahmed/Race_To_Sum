@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['user_id'])) {
-    header("Location: ../Views/Login.php"); // Redirect to login if the user is not logged in
+    header("Location: ../Views/Login.php");
     exit;
 }
 ?>
@@ -35,6 +35,13 @@ if (!isset($_SESSION['user_id'])) {
   <div id="balloon-animation" style="display: none;">
     🎈🎈🎈🎈🎈
   </div>
+  <audio id="play-music" loop>
+    <source src="../Assets/sounds/play_bg.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<script src="../Assets/js/GameSounds.js" defer></script>
+
 
   <script src="../Assets/js/Play.js"></script>
 </body>

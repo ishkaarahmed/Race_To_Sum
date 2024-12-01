@@ -29,7 +29,7 @@ if (!isset($_SESSION['user_id'])) {
     <div class="dashboard-container">
         <h1 class="dashboard-title">Race to Sum</h1>
 
-        <a href="../Views/Play.php" class="dashboard-button start-game">Start Game</a>
+        <a href="../Views/Play.php" id="start-game-button" class="dashboard-button start-game">Start Game</a>
         
         <a href="../Views/Leaderboard.php" class="dashboard-button leaderboard">View Leaderboard</a>
 
@@ -66,6 +66,19 @@ if (!isset($_SESSION['user_id'])) {
         </form>
     </div>
 </div>
+<audio id="dashboard-music" loop>
+    <source src="../Assets/sounds/game_music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<audio id="play-music" loop>
+    <source src="../Assets/sounds/play_bg.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<script src="../Assets/js/GameSounds.js" defer></script>
+
+
 <script src="../Assets/js/Dashboard.js"></script>
 </body>
 </html>
