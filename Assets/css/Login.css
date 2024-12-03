@@ -25,7 +25,7 @@ body {
     font-weight: bold;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
     text-align: center;
-    letter-spacing: 2px; /* Adds space between letters */
+    letter-spacing: 2px; 
 }
 
 .login-container {
@@ -41,7 +41,7 @@ body {
 }
 
 .login-container:hover {
-    transform: translateY(-10px); /* Slight lift effect on hover */
+    transform: translateY(-10px); 
 }
 
 form label {
@@ -64,13 +64,13 @@ form input {
     font-size: 1.1em;
     color: #333333;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    background-color: rgba(255, 255, 255, 0.8); /* Soft background for inputs */
+    background-color: rgba(255, 255, 255, 0.8); 
 }
 
 form input:focus {
-    border: 2px solid #ffcc33; /* Yellow border on focus */
+    border: 2px solid #ffcc33; 
     outline: none;
-    box-shadow: 0 0 8px rgba(255, 204, 51, 0.6); /* Focus shadow effect */
+    box-shadow: 0 0 8px rgba(255, 204, 51, 0.6); 
 }
 
 .signup-button, .login-button {
@@ -90,7 +90,7 @@ form input:focus {
 
 .signup-button:hover, .login-button:hover {
     background-color: #cc0000;
-    transform: scale(1.05); /* Slight zoom effect */
+    transform: scale(1.05); 
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
 
@@ -108,11 +108,11 @@ form input:focus {
 }
 
 .signup-link a:hover {
-    color: #ffffff; /* Hover color change */
+    color: #ffffff; 
     text-decoration: underline;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     .page-title {
         font-size: 3.5em;

@@ -32,9 +32,9 @@ body {
     width: 100%;
     max-width: 450px;
     padding: 30px;
-    background: rgba(0, 0, 0, 0.7); /* Enhanced background opacity */
+    background: rgba(0, 0, 0, 0.7); 
     border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6); /* Stronger shadow */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6); 
     text-align: center;
     backdrop-filter: blur(12px);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
@@ -72,8 +72,8 @@ form input {
 form input:focus {
     border: 2px solid #ffd700;
     outline: none;
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.8); /* Subtle glow */
-    background-color: rgba(255, 255, 255, 1); /* Brighten on focus */
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.8); 
+    background-color: rgba(255, 255, 255, 1); 
 }
 
 form input::placeholder {

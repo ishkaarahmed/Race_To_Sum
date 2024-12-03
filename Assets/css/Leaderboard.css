@@ -40,7 +40,7 @@ body {
     overflow: hidden;
 }
 
-/* Table Styling */
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -52,7 +52,7 @@ table th, table td {
     font-size: 1.3em;
     color: #ffffff;
     text-align: center;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Adds border for separation */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2); 
 }
 
 table th {
@@ -64,17 +64,17 @@ table tbody tr:nth-child(even) {
     background-color: rgba(255, 255, 255, 0.05);
 }
 
-/* Hover Effect for Table Rows */
+
 table tbody tr:hover {
     background-color: rgba(0, 0, 0, 0.5);
     transition: background-color 0.3s ease;
 }
 
-/* Back Button Styling */
+
 .back-button {
     position: absolute;
-    bottom: 15px; /* Adjusted position */
-    left: 20px;  /* Adjusted position */
+    bottom: 15px; 
+    left: 20px;  
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -83,19 +83,19 @@ table tbody tr:hover {
 .back-button .back-icon {
     width: 50px;
     height: 50px;
-    filter: brightness(0) invert(1); /* White color */
+    filter: brightness(0) invert(1); 
     transition: transform 0.3s ease;
     display: block;
-    object-fit: contain; /* Scales the image proportionally */
+    object-fit: contain; 
 }
 
 .back-button .back-icon:hover {
-    transform: scale(1.3); /* Slight zoom on hover */
+    transform: scale(1.3); 
 }
 
-/* Additional Button Styling */
+
 .dashboard-button {
-    background: linear-gradient(45deg, #4CAF50, #45a049); /* Custom button gradient */
+    background: linear-gradient(45deg, #4CAF50, #45a049); 
     color: #ffffff;
     font-weight: bold;
     text-transform: uppercase;

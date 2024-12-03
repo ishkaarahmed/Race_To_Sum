@@ -134,7 +134,7 @@ h1 {
 }
 
 #balloon-animation {
-  display: none; /* Initially hidden */
+  display: none; 
   position: absolute;
   top: 50%;
   left: 50%;
