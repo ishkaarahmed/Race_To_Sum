@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['user_id'])) {
-    header("Location: ../Views/Login.php"); // Redirect to login if the user is not logged in
+    header("Location: ../Views/Login.php"); // Redirect to login 
     exit;
 }
 ?>
@@ -15,7 +15,7 @@ if (!isset($_SESSION['user_id'])) {
     <link rel="stylesheet" href="../Assets/css/Dashboard.css">
 </head>
 <body style="background: url('../Assets/images/imagei.jpg') no-repeat center center fixed; background-size: cover;">
-    <!-- Display Logged-In Username -->
+ 
     <div class="user-info">
         <p>
             Let's Race to Sum, 
@@ -25,7 +25,7 @@ if (!isset($_SESSION['user_id'])) {
         </p>
     </div>
 
-    <!-- Dashboard Content -->
+
     <div class="dashboard-container">
         <h1 class="dashboard-title">Race to Sum</h1>
 
@@ -36,19 +36,19 @@ if (!isset($_SESSION['user_id'])) {
         <a href="../Views/Settings.php" class="dashboard-button settings">Settings</a>
     </div>
 
-    <!-- Logout Button -->
+
     <a href="javascript:void(0);" class="logout-button" onclick="confirmLogout()">
         <img src="../Assets/images/logout.png" alt="Log Out" class="logout-icon">
     </a>
 
     <div id="profile-popup" class="popup" style="display: none;">
     <div class="popup-content">
-        <!-- Quit Button -->
+
         <button class="popup-quit" onclick="toggleProfilePopup()">
             <img src="../Assets/images/quit.png" alt="Close" class="quit-icon">
         </button>
         <h2>Update Profile</h2>
-        <div id="message"></div> <!-- Placeholder for success/error messages -->
+        <div id="message"></div>
         <form id="profile-form">
             <label for="old-password">Current Password</label>
             <input type="password" id="old-password" name="old_password" required placeholder="Enter current password">
@@ -66,17 +66,7 @@ if (!isset($_SESSION['user_id'])) {
         </form>
     </div>
 </div>
-<audio id="dashboard-music" loop>
-    <source src="../Assets/sounds/game_music.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
 
-<audio id="play-music" loop>
-    <source src="../Assets/sounds/play_bg.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
-
-<script src="../Assets/js/GameSounds.js" defer></script>
 
 
 <script src="../Assets/js/Dashboard.js"></script>

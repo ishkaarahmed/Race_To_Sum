@@ -13,7 +13,7 @@ session_start();
     <h1 class="page-title">Log In</h1>
 
     <div class="login-container">
-        <!-- Display error message dynamically -->
+       
         <div id="error-message" class="error-message">
             <?php
             if (isset($_GET['error'])) {
@@ -22,7 +22,6 @@ session_start();
             ?>
         </div>
 
-        <!-- Login Form -->
         <form id="login-form" action="../Controllers/login.php" method="POST">
             <label for="email">Email</label>
             <input type="email" id="email" name="email" required oninput="clearErrorMessage()" >

@@ -13,6 +13,9 @@ if (!isset($_SESSION['user_id'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Banana Game - Race to Sum</title>
   <link rel="stylesheet" href="../Assets/css/Play.css">
+  <audio id="wrong-answer-sound" src="../Assets/sounds/wrong_answer.mp3"></audio>
+<audio id="game-over-sound" src="../Assets/sounds/game_over.mp3"></audio>
+
 </head>
 <body>
   <div id="game-container">
@@ -35,12 +38,8 @@ if (!isset($_SESSION['user_id'])) {
   <div id="balloon-animation" style="display: none;">
     🎈🎈🎈🎈🎈
   </div>
-  <audio id="play-music" loop>
-    <source src="../Assets/sounds/play_bg.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
-
-<script src="../Assets/js/GameSounds.js" defer></script>
+  <audio id="wrong-answer-sound" src="../Assets/sounds/wrong_answer.mp3"></audio>
+<audio id="game-over-sound" src="../Assets/sounds/game_over.mp3"></audio>
 
 
   <script src="../Assets/js/Play.js"></script>

@@ -13,7 +13,7 @@ session_start();
     <h1 class="page-title">Create Your Account</h1>
 
     <div class="signup-container">
-        <!-- Display error or success messages -->
+
         <div id="message-container">
             <?php if (isset($_SESSION['error'])): ?>
                 <div class="error-message" id="error-message">

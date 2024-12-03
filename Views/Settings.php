@@ -10,7 +10,7 @@
     <?php 
     session_start();
     if (!isset($_SESSION['username'])) {
-        header("Location: Login.php"); // Redirect if not logged in
+        header("Location: Login.php"); 
         exit;
     }
     ?>
@@ -30,7 +30,7 @@
 <script src="../Assets/js/GameSounds.js" defer></script>
 
 
-        <!-- Back Button -->
+
         <a href="Dashboard.php" class="back-button">
             <img src="../Assets/images/back.png" alt="Back to Home" class="back-icon">
         </a>
