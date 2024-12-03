@@ -64,7 +64,6 @@ if (isset($_GET['fetch_leaderboard']) && $_GET['fetch_leaderboard'] === "true") 
     exit;
 }
 
-// Default response for unsupported requests
 echo json_encode(["error" => "Invalid request."]);
 $conn->close();
 ?>

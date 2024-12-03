@@ -44,7 +44,7 @@ $stmt->close();
 $conn->close();
 
 // Return the score or default to 0 if no score is found
-$score = $score ?? 0; // Default score is 0 if no score is found
+$score = $score ?? 0; 
 header('Content-Type: application/json');
 echo json_encode(['score' => $score]);
 exit;

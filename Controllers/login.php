@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    // Close statement
+    // Close 
     $stmt->close();
 } else {
     // Invalid request method
